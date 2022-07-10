@@ -79,22 +79,16 @@ async def unknown_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-async def inline_emoji(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def inline_caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.inline_query.query
-    emoji1, emoji2, emoji3 = sample(EMOJIS, k=3)
-    results = [InlineQueryResultArticle(
-        id=emoji1,
-        title=emoji1,
-        input_message_content=InputTextMessageContent(emoji1)
-    ), InlineQueryResultArticle(
-        id=emoji2,
-        title=emoji2,
-        input_message_content=InputTextMessageContent(emoji2)
-    ), InlineQueryResultArticle(
-        id=emoji3,
-        title=emoji3,
-        input_message_content=InputTextMessageContent(emoji3)
-    )]
+    result = query.upper()
+    results = [
+        InlineQueryResultArticle(
+            id=query,
+            title=result,
+            input_message_content=InputTextMessageContent(result)
+        )
+    ]
     await context.bot.answer_inline_query(update.inline_query.id, results)
 
 
@@ -110,7 +104,7 @@ if __name__ == '__main__':
     rnd_emoji = CommandHandler('emoji', random_emoji)
     application.add_handler(rnd_emoji)
 
-    inline_emoji_handler = InlineQueryHandler(inline_emoji)
+    inline_emoji_handler = InlineQueryHandler(inline_caps)
     application.add_handler(inline_emoji_handler)
 
     echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), say)
