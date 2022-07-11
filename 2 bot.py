@@ -5,7 +5,7 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, \
     MessageHandler, filters, InlineQueryHandler
 from telegram import Update, InlineQueryResultArticle, InputTextMessageContent
 
-import emoji.unicode_codes.data_dict as codes
+from emoji.unicode_codes import EMOJI_UNICODE_ENGLISH as emoji_list
 
 
 TOKEN = '5559983919:AAFVdGEtjta79Dw1ouGkcPLr1sFYTpaEHa8'
@@ -18,7 +18,7 @@ RESPONSES = [
     "Signs point to yes.", "Very doubtful.", "Without a doubt.", "Yes.",
     "Yes – definitely.", "You may rely on it."
 ]
-EMOJIS = list(codes.EMOJI_DATA.keys())
+EMOJIS = list(emoji_list.values())
 
 logging.basicConfig(
     filename='2bot_logs.log',
