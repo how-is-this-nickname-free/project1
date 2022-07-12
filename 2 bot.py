@@ -71,6 +71,7 @@ async def say(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text='I`m your echo',
         reply_to_message_id=update.message.id
     )
+    print('test2')
 
 
 async def unknown_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
