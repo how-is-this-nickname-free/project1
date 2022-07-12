@@ -68,7 +68,7 @@ async def say(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text='I`m your echo',
+        text='I`m your echo!',
         reply_to_message_id=update.message.id
     )
 
