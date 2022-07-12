@@ -8,7 +8,7 @@ from telegram import Update, InlineQueryResultArticle, InputTextMessageContent
 from emoji.unicode_codes import EMOJI_UNICODE_ENGLISH as emoji_list
 
 
-TOKEN = '5559983919:AAFVdGEtjta79Dw1ouGkcPLr1sFYTpaEHa8'
+TOKEN = PTB_TOKEN
 RESPONSES = [
     "As I see it, yes.", "Ask again later.", "Better not tell you now.",
     "Cannot predict now.", "Concentrate and ask again.",
